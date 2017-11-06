@@ -2,15 +2,26 @@
 
 
 function createDoc() {
-	var personId = $('#personId').val();
+	var name = $('#name').val();
 	var quote = $('#quote').val();
 	var doc = {};
 
-	doc.personId = parseInt(personId);
+	doc.name = name;
 	doc.quote = quote;
 	doc.type = "quote";
 	var json = JSON.stringify(doc);
 	console.log(json);
+	
+	$.ajax({
+		type:				'PUT',
+		url:				'../../' + name,
+		data:				json,
+		contentType:		'application/json',
+		async:				true,
+		success:			function(data) {
+			console.log(data);
+		}
+	});
 }
 
 
