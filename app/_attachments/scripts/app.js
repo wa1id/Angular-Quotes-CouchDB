@@ -1,5 +1,8 @@
 'use strict'
 
+var name = $('#name').val();
+var doc = {};
+
 angular.module('App', ['ngRoute'])
 
 .config(function($routeProvider) {
