@@ -1,5 +1,5 @@
 'use strict'
-
+var ALL_DOCS = "../../_all_docs?include_docs=true";
 
 function createDoc() {
 	var name = $('#name').val();
@@ -20,8 +20,29 @@ function createDoc() {
 		async:				true,
 		success:			function(data) {
 			console.log(data);
+		},
+		error:			function(XMLHttpRequest, textStatus, errorThrown) {
+			console.log(errorThrown);
 		}
 	});
+}
+
+function buildOutput(view, tag) {
+	
+	var viewString = view;
+
+	$.ajax({
+		type:				'GET',
+		url:				viewString,
+		contentType:		'application/json',
+		success:			function(data) {
+			
+		},
+		error:			function(XMLHttpRequest, textStatus, errorThrown) {
+			console.log(errorThrown);
+		}
+	});
+	}
 }
 
 
