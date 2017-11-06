@@ -20,6 +20,7 @@ function createDoc() {
 		async:				true,
 		success:			function(data) {
 			console.log(data);
+			buildOutput(ALL_DOCS, 0);
 		},
 		error:			function(XMLHttpRequest, textStatus, errorThrown) {
 			console.log(errorThrown);
@@ -36,14 +37,14 @@ function buildOutput(view, tag) {
 		url:				viewString,
 		contentType:		'application/json',
 		success:			function(data) {
-			
+			console.log(data);
 		},
 		error:			function(XMLHttpRequest, textStatus, errorThrown) {
 			console.log(errorThrown);
 		}
 	});
-	}
 }
+
 
 
 angular.module('App', ['ngRoute'])
