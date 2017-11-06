@@ -1,7 +1,18 @@
 'use strict'
 
-var name = $('#name').val();
-var doc = {};
+
+function createDoc() {
+	var personId = $('#personId').val();
+	var quote = $('#quote').val();
+	var doc = {};
+
+	doc.personId = parseInt(personId);
+	doc.quote = quote;
+	doc.type = "quote";
+	var json = JSON.stringify(doc);
+	console.log(json);
+}
+
 
 angular.module('App', ['ngRoute'])
 
